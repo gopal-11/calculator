@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+  <style>
+  body {
+  font-family: sans-serif;
+}
+
+.row {
+  display: flex;
+  justify-content: center; 
+}
+.grid {
+  padding: 20px;
+  background-color: black;
+  font-size: 20px;
+  color: white;
+}
+.equal {
+  background-color: black;
+  font-size: 20px;
+  color: white;
+  width: 50px;
+}
+.zero{
+  background-color: black;
+  
+  font-size: 20px;
+  color: white;
+  width: 215px;
+  height: 50px;
+}
+input{
+  background-color: black;
+  color: white;
+  width: 210px;
+  height: 30px;
+}
+
+
+
+  </style>
+
+  <body>
+    <div id="app">
+      <!-- HTML here -->
+      <div class="row">
+        <input type="text" id="input" disabled />
+      </div>
+      <div class="row">
+        
+        <button onclick="clearScreen()" class="grid" id="clr">C</button>
+        <button class="grid" onclick="fordisplay('/')" id="divide">/</button>
+        <button class="grid" onclick="fordisplay('*')" id="multiply">*</button>
+        <button class="grid" onclick="fordisplay('+')" id="plus">+</button>
+      </div>
+      <div class="row">
+        <button class="grid" onclick="fordisplay('7')" id="block7">7</button>
+        <button class="grid" onclick="fordisplay('8')" id="block8">8</button>
+        <button class="grid" onclick="fordisplay('9')" id="block9">9</button>
+        <button class="grid" onclick="fordisplay('-')" id="minus">-</button>
+      </div>
+      <div class="row">
+        <button class="grid" onclick="fordisplay('4')" id="block4">4</button>
+        <button class="grid" onclick="fordisplay('5')" id="block5">5</button>
+        <button class="grid" onclick="fordisplay('6')" id="block6">6</button>
+        <button class="grid" onclick="fordisplay('.')" id="dot">.</button>
+      </div>
+      <div class="row">
+        <button class="grid" onclick="fordisplay('1')" id="block1">1</button>
+        <button class="grid" onclick="fordisplay('2')" id="block2">2</button>
+        <button class="grid" onclick="fordisplay('3')" id="block3">3</button>
+        <button class="equal" onclick="display()" id="ans">=</button>
+      </div>
+      <div class="row">
+        <button class="zero" onclick="fordisplay('0')" id="block0">0</button>
+      </div>
+    </div>
+
+    <script>
+    function display(){
+  const element = document.getElementById("input");
+  const val = element.value;
+  const ans = eval(val);
+  element.value = ans;
+}
+function fordisplay(myvalue){
+  const val = document.getElementById("input");
+  val.value += myvalue;
+}
+function clearScreen(){
+  const elem=document.getElementById("input");
+  elem.value="";
+}
+
+
+    </script>
+  </body>
+</html>
